@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono&display=swap');
+
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-container {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+}
+
+.video-overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-container {
+    min-width: 500px;
+    min-height: 250px;
+    margin: 0 auto;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    color: black;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+}
+
+.input-container {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+label:first-child {
+    padding: 1.5px;
+}
+
+input {
+    width: 85%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #fff;
+    outline: none;
+}
+
+button {
+    width: 90%;
+    margin-top: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: #ffa62b;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(110%);
+}
+
+ul {
+    margin-left: -45px;
+}
+
+li {
+    display: inline-block;
+    list-style-type: none;
+    font-size: 20px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+li span {
+    display: block;
+    font-size: 40px;
+    text-align: center;
+}
+
+.countdown-complete {
+    text-align: center;
+}
+
+h1 {
+    padding: 10px;
+}
+
+.complete {
+    animation: firstAnim 4s infinite;
+}
+
+@keyframes firstAnim {
+    0% {
+        color: #120078;
+    }
+
+    25% {
+        color: #9d0191;
+    }
+
+    50% {
+        color: #fd3a69;
+        transform: scale(1.2);
+    }
+
+    75% {
+        color: #fecd1a;
+    }
+
+    100% {
+        color: #d2e603;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .video-container {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    video {
+        object-fit: cover;
+        object-position: 20%;
+    }
+
+    .main-container {
+        min-width: unset;
+        width: 90vw;
+    }
+
+    li {
+        font-size: 10px;
+    }
+
+    li span {
+        font-size: 30px;
+    }
+}
