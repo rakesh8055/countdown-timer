@@ -157,6 +157,10 @@ h1 {
         width: 90vw;
     }
 
+    #date-picker {
+        -webkit-min-logical-width: calc(100% - 16px);
+    }
+
     li {
         font-size: 10px;
     }
