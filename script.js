@@ -12,6 +12,9 @@ const timeElements = document.querySelectorAll('span');
 //new countdown
 const newCountdownBtn = document.getElementById('new-countdown');
 
+//Complete countdown
+const completeContainer = document.getElementById('countdown-complete');
+
 //Set Min date on datepicker
 let minDate = new Date();
 minDate = minDate.toISOString().split('T')[0];
@@ -32,6 +35,13 @@ function updateTime() {
     countdownActive = setInterval( () => {
         let today = new Date();
         let diff = countdownDateValue - today.getTime();
+
+        if (diff < 0 ) {
+            completeContainer.hidden = false;
+            countDownContainer.hidden = true;
+            inputContainer.hidden = true;
+            clearInterval(countdownActive);
+        }
         const days = Math.floor(diff / day);
         const hours = Math.floor((diff % day) / hour);
         const minutes = Math.floor((diff % hour) / minute);
@@ -80,6 +90,7 @@ function checkLocalStorage() {
 
 function reset() {
     inputContainer.hidden = false;
+    completeContainer.hidden = true;
     countDownContainer.hidden = true;
     clearInterval(countdownActive);
     selectedDate = '';
