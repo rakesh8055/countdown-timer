@@ -147,6 +147,10 @@ h1 {
         width: 100vw;
     }
 
+    .input-container h1 {
+        font-size: 30px;
+    }
+
     video {
         object-fit: cover;
         object-position: 20%;
